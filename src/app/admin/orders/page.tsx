@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { collection, getDocs, updateDoc, deleteDoc, doc, query, orderBy } from 'firebase/firestore';
 import { db } from '@/lib/firebase';
 import { Order } from '@/types';
-import { Eye, Edit, Trash2, Phone, MapPin, Package, Calendar, Filter, Search } from 'lucide-react';
+import { Eye, Trash2, Phone, MapPin, Package, Calendar, Filter, Search } from 'lucide-react';
 import toast, { Toaster } from 'react-hot-toast';
 import { useAuth } from '@/contexts/AuthContext';
 import AdminLogin from '@/components/AdminLogin';
@@ -43,12 +43,11 @@ export default function AdminOrdersPage() {
       setLoading(false);
     }
   };
-
   const updateOrderStatus = async (orderId: string, newStatus: string) => {
     try {
       await updateDoc(doc(db, 'orders', orderId), { status: newStatus });
       setOrders(prev => prev.map(order => 
-        order.id === orderId ? { ...order, status: newStatus as any } : order
+        order.id === orderId ? { ...order, status: newStatus as Order['status'] } : order
       ));
       toast.success('Order status updated!');
     } catch (error) {

@@ -10,7 +10,7 @@ import ProductCard from '@/components/ProductCard';
 import OrderForm from '@/components/OrderForm';
 import Navbar from '@/components/Navbar';
 import CategoryFilter from '@/components/CategoryFilter';
-import { Shield, Truck, CreditCard, Phone, Clock, MapPin, Star, Gamepad2, Monitor, Smartphone, ShoppingBag } from 'lucide-react';
+import { Shield, Truck, CreditCard, Phone, Clock, MapPin, Star, Gamepad2, Monitor } from 'lucide-react';
 import Image from 'next/image';
 
 // Add Material Icons Component
@@ -335,7 +335,7 @@ export default function Home() {
                 ? `${filteredProducts.length} produk ditemukan` 
                 : 'Tidak ada produk ditemukan'
               }
-              {searchTerm && <span> untuk "{searchTerm}"</span>}
+              {searchTerm && <span> untuk &quot;{searchTerm}&quot;</span>}
             </p>
             
             {selectedCategory !== 'all' && (
@@ -447,7 +447,7 @@ export default function Home() {
                 
                 {/* Testimonial Content */}
                 <p className="text-gray-700 mb-8 leading-relaxed text-lg">
-                  "{testimonial.content}"
+                  &quot;{testimonial.content}&quot;
                 </p>
                 
                 {/* Product Badge */}

@@ -7,7 +7,7 @@ import { db } from '@/lib/firebase';
 import { Product } from '@/types';
 import { products as localProducts } from '@/data/products';
 import OrderForm from '@/components/OrderForm';
-import { ArrowLeft, Star, ShoppingCart } from 'lucide-react';
+import { ArrowLeft } from 'lucide-react';
 import Image from 'next/image';
 import toast, { Toaster } from 'react-hot-toast';
 import dynamic from 'next/dynamic';
@@ -437,19 +437,18 @@ export default function ProductDetailPage() {
             <div className="prose prose-gray prose-lg max-w-none">
               <div className="text-gray-700 leading-relaxed">
                 <MarkdownRenderer 
-                  components={{
-                    h1: ({node, ...props}) => <h1 className="text-2xl font-bold text-gray-900 mb-4 mt-6" {...props} />,
-                    h2: ({node, ...props}) => <h2 className="text-xl font-bold text-gray-900 mb-3 mt-5" {...props} />,
-                    h3: ({node, ...props}) => <h3 className="text-lg font-semibold text-gray-900 mb-2 mt-4" {...props} />,
-                    p: ({node, ...props}) => <p className="mb-4 text-gray-700 leading-relaxed" {...props} />,
-                    ul: ({node, ...props}) => <ul className="list-disc list-inside mb-4 space-y-2 text-gray-700" {...props} />,
-                    ol: ({node, ...props}) => <ol className="list-decimal list-inside mb-4 space-y-2 text-gray-700" {...props} />,
-                    li: ({node, ...props}) => <li className="text-gray-700" {...props} />,
-                    strong: ({node, ...props}) => <strong className="font-semibold text-gray-900" {...props} />,
-                    em: ({node, ...props}) => <em className="italic text-gray-700" {...props} />,
-                    a: ({node, ...props}) => <a className="text-blue-600 hover:text-blue-800 underline" {...props} />,
-                    code: ({node, ...props}) => <code className="bg-gray-100 px-2 py-1 rounded text-sm font-mono text-gray-800" {...props} />,
-                    blockquote: ({node, ...props}) => <blockquote className="border-l-4 border-blue-500 pl-4 py-2 bg-blue-50 text-gray-700 italic mb-4" {...props} />,
+                  components={{                    h1: ({...props}) => <h1 className="text-2xl font-bold text-gray-900 mb-4 mt-6" {...props} />,
+                    h2: ({...props}) => <h2 className="text-xl font-bold text-gray-900 mb-3 mt-5" {...props} />,
+                    h3: ({...props}) => <h3 className="text-lg font-semibold text-gray-900 mb-2 mt-4" {...props} />,
+                    p: ({...props}) => <p className="mb-4 text-gray-700 leading-relaxed" {...props} />,
+                    ul: ({...props}) => <ul className="list-disc list-inside mb-4 space-y-2 text-gray-700" {...props} />,
+                    ol: ({...props}) => <ol className="list-decimal list-inside mb-4 space-y-2 text-gray-700" {...props} />,
+                    li: ({...props}) => <li className="text-gray-700" {...props} />,
+                    strong: ({...props}) => <strong className="font-semibold text-gray-900" {...props} />,
+                    em: ({...props}) => <em className="italic text-gray-700" {...props} />,
+                    a: ({...props}) => <a className="text-blue-600 hover:text-blue-800 underline" {...props} />,
+                    code: ({...props}) => <code className="bg-gray-100 px-2 py-1 rounded text-sm font-mono text-gray-800" {...props} />,
+                    blockquote: ({...props}) => <blockquote className="border-l-4 border-blue-500 pl-4 py-2 bg-blue-50 text-gray-700 italic mb-4" {...props} />,
                   }}
                 >
                   {product.description}
