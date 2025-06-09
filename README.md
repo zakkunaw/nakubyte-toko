@@ -136,23 +136,42 @@ src/
 
 ## 🚀 Deployment
 
-### Deploy to Vercel
+### Vercel Deployment
 
-1. **Push to GitHub** (if not already done)
-2. **Connect to Vercel**:
-   - Go to [vercel.com](https://vercel.com)
-   - Import your GitHub repository
-   - Add your environment variables
-   - Deploy automatically
+This project is configured for easy deployment on Vercel:
 
-### Environment Variables for Production
-Add these environment variables in Vercel dashboard:
-- `NEXT_PUBLIC_FIREBASE_API_KEY`
-- `NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN`
-- `NEXT_PUBLIC_FIREBASE_PROJECT_ID`
-- `NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET`
-- `NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID`
-- `NEXT_PUBLIC_FIREBASE_APP_ID`
+1. **Push to GitHub**: Make sure your code is pushed to a GitHub repository
+2. **Connect to Vercel**: Go to [vercel.com](https://vercel.com) and import your GitHub repository
+3. **Configure Environment Variables**: Add the following environment variables in Vercel dashboard:
+   ```
+   NEXT_PUBLIC_FIREBASE_API_KEY=your_api_key
+   NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your_project.firebaseapp.com
+   NEXT_PUBLIC_FIREBASE_PROJECT_ID=your_project_id
+   NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your_project.appspot.com
+   NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
+   NEXT_PUBLIC_FIREBASE_APP_ID=your_app_id
+   ```
+4. **Deploy**: Vercel will automatically build and deploy your application
+
+### Firebase Setup for Production
+
+1. Create a Firebase project at [firebase.google.com](https://firebase.google.com)
+2. Enable Firestore Database
+3. Configure authentication (if needed)
+4. Update security rules for production use
+5. Copy your Firebase config to environment variables
+
+### Environment Variables
+
+Create a `.env.local` file with your Firebase configuration:
+```env
+NEXT_PUBLIC_FIREBASE_API_KEY=your_api_key
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your_project.firebaseapp.com
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=your_project_id
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your_project.appspot.com
+NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
+NEXT_PUBLIC_FIREBASE_APP_ID=your_app_id
+```
 
 ## 🛡️ Security
 
